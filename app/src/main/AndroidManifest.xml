@@ -13,10 +13,49 @@
         android:theme="@style/Theme.Pp0202"
         tools:targetApi="31">
         <activity
-            android:name=".boot"
+            android:name=".lookRoom"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AddRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".lookUser"
+            android:exported="false" />
+        <activity
+            android:name=".AddUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddDeviceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".lookDevice"
+            android:exported="false" />
+        <activity
+            android:name=".DevicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".homepage"
+            android:exported="false" />
+        <activity
+            android:name=".Address"
+            android:exported="false" />
+        <activity
+            android:name=".CreatePin"
+            android:exported="false" />
+        <activity
+            android:name=".registrationScreen"
+            android:exported="false" />
+        <activity
+            android:name=".boot"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +63,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

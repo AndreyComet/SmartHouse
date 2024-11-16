@@ -6,19 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/background0202"
-
     android:orientation="vertical">
-
-
     <ImageView
         android:layout_width="119dp"
         android:layout_height="119dp"
         android:layout_marginLeft="145dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/logo_1" />
-
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +26,6 @@
             android:textStyle="bold"
             android:textColor="@color/white"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,11 +34,14 @@
         android:layout_marginTop="50dp"
         android:background="@color/semi_transparent_white">
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Имя пользователя" />
+        <EditText
             android:id="@+id/emailEditText"
             android:hint="Электронная почта"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="173dp"
@@ -53,30 +49,26 @@
             android:password="true"
             android:hint="Пароль" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_marginTop="100dp">
-
         <Button
             android:id="@+id/loginButton"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="#732626"
-            android:text="Войти" />
+            android:text="Регистрация" />
         <Button
             android:id="@+id/registerButton"
-            android:backgroundTint="@color/black"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Регистрация"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:backgroundTint="@color/black"
+            android:text="Войти" />
     </LinearLayout>
-
-
 </LinearLayout>
