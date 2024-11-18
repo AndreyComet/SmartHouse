@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RoomAdapter1(private val rooms: List<String>, private val onItemClick: (String) -> Unit): RecyclerView.Adapter<RoomsAdapter1.RoomsViewHolder>() {
+class RoomAdapter1(private val rooms: List<String>, private val onItemClick: (String) -> Unit): RecyclerView.Adapter<RoomsFragment.RoomsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomsViewHolder{
         val view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
         return RoomsViewHolder(view)
