@@ -36,7 +36,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Имя пользователя" />
+            android:hint="Имя пользователя"
+            android:id="@+id/nameUserEditText"/>
         <EditText
             android:id="@+id/emailEditText"
             android:hint="Электронная почта"
@@ -56,14 +57,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp">
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/regButton"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="#732626"
             android:text="Регистрация" />
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/logininButton"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -1,40 +1,42 @@
 package com.example.pp0202
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 
-
-class CreatePin : AppCompatActivity() {
-    private lateinit var dotContainer: LinearLayout
+class loginPin : AppCompatActivity() {
+    private lateinit var dotContainer1: LinearLayout
     private lateinit var pinDigits: MutableList<Int>
     private lateinit var digitButtons: List<Button>
+    private lateinit var exitButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_pin)
-        dotContainer = findViewById(R.id.dotContainer)
+        setContentView(R.layout.activity_login_pin)
+        dotContainer1 = findViewById(R.id.dotContainer1)
         pinDigits = mutableListOf()
         digitButtons = listOf(
-            findViewById(R.id.button1),
-            findViewById(R.id.button2),
-            findViewById(R.id.button3),
-            findViewById(R.id.button4),
-            findViewById(R.id.button5),
-            findViewById(R.id.button6),
-            findViewById(R.id.button7),
-            findViewById(R.id.button8),
-            findViewById(R.id.button9),
-            findViewById(R.id.button0)
+            findViewById(R.id.button11),
+            findViewById(R.id.button22),
+            findViewById(R.id.button33),
+            findViewById(R.id.button44),
+            findViewById(R.id.button55),
+            findViewById(R.id.button66),
+            findViewById(R.id.button77),
+            findViewById(R.id.button88),
+            findViewById(R.id.button99),
+            findViewById(R.id.button00),
         )
         digitButtons.forEach{button -> button.setOnClickListener{}
-        onDigitButtonClicked(button.text.toString().toInt())}
+            onDigitButtonClicked(button.text.toString().toInt())}
 
+        exitButton = findViewById(R.id.exit)
+        exitButton.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
         }
+    }
     private fun onDigitButtonClicked(digit:Int){
         if(pinDigits.size<4){
             pinDigits.add(digit)
@@ -45,20 +47,13 @@ class CreatePin : AppCompatActivity() {
         }
     }
     private fun updateDots(){
-        dotContainer.removeAllViews()
+        dotContainer1.removeAllViews()
         pinDigits.forEach{
             val dot = ImageView(this)
             dot.setImageResource(R.drawable.filled_dot)
             val params = LinearLayout.LayoutParams(50, 50)
             dot.layoutParams = params
-            dotContainer.addView(dot)
+            dotContainer1.addView(dot)
         }
     }
 }
-
-
-
-
-
-
-
