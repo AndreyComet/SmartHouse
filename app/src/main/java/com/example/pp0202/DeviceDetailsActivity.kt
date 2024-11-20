@@ -1,5 +1,8 @@
 package com.example.pp0202
 
+import android.app.AlertDialog
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +12,7 @@ import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.ToggleButton
+import java.util.Calendar
 
 class DeviceDetailsActivity : AppCompatActivity() {
     private lateinit var backButton: Button
@@ -32,7 +36,7 @@ class DeviceDetailsActivity : AppCompatActivity() {
         dateField = findViewById(R.id.dateField)
         updateSliderValueText()
         backButton.setOnClickListener{
-            onBackPress()
+            onBackPressed()
         }
         toggleButton.setOnClickListener{
             isDeviceActive = !isDeviceActive
@@ -77,5 +81,21 @@ class DeviceDetailsActivity : AppCompatActivity() {
         }
         else{editText1.error = "Поле не должно быть пустым"}
     }
-
+    private fun showOptionDialog(){
+        val options = arrayOf("Опция1", "Опция2", "Опция3")
+        AlertDialog.Builder(this).setTitle("Выберите опцию").setItems(options){ _, which -> selectionField.text = options[which]
+        }
+            .show()
+    }
+    private fun showDateTimePicker(){
+        val calendar = Calendar.getInstance()
+        val datePickerDialog = DatePickerDialog(this, {_, year, month, dayOfMonth ->
+            val timePickerDialog = TimePickerDialog(this, {_, hourOfDay, minute ->
+                val selectedDate = "$dayOfMonth/${month + 1}/ $year $hourOfDay: $minute"
+                dateField.text = selectedDate
+            },
+                calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true)
+        timePickerDialog.show()}, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
+        datePickerDialog.show()
+    }
 }
