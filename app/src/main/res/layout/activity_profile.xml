@@ -6,6 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".profile"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="81dp"
+        android:background="@drawable/rectangle_10_1">
+
+        <ImageButton
+            android:id="@+id/backnazad"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/group_47"
+            android:text="Назад" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Профиль"
+            android:textColor="@color/white"
+            android:layout_marginLeft="108dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle_10_1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="199dp"
+            android:layout_height="169dp"
+            android:layout_gravity="center"
+             />
+
+    </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
@@ -29,20 +64,27 @@
         android:id="@+id/wordpass"
         android:hint="Пароль"
         android:inputType="textPassword"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/save"
-        android:text="Сохранить"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logout"
-        android:text="Выйти"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/backnazad"
-        android:text="Назад"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="140dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/blue"
+            android:text="Сохранить" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/red"
+            android:text="Выйти" />
+    </LinearLayout>
 </LinearLayout>

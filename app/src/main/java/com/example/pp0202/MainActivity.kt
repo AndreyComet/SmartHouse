@@ -1,12 +1,13 @@
 package com.example.pp0202
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.gotrue.auth
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var loginButton: Button
     private lateinit var registerButton: Button
+    private lateinit var supabaseClient: SupabaseClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +26,16 @@ class MainActivity : AppCompatActivity() {
         registerButton = findViewById(R.id.registerButton)
         loginButton.setOnClickListener{authenticateUser()}
         registerButton.setOnClickListener{goToRegistrationScreen()}
+        val url = "https://wqekapeowfksbnnrpxyw.supabase.co"
+        val key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZWthcGVvd2Zrc2JubnJweHl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIwOTY4OTUsImV4cCI6MjA0NzY3Mjg5NX0.45Va9lfytBnq0k2qd2LdgzlKpSFi3JAVGNrARDTYPJA"
+        supabaseClient = SupabaseClient(url, key)
+
     }
 
     private fun authenticateUser(){
         val email = emailEditText.text.toString()
         val password = passwordEditText.text.toString()
+        supabaseClient.auth.signInWithEmail(email, password)
         if(email.isEmpty()||password.isEmpty()){
             showToast("Все поля должны быть заполнены")
             return
@@ -53,4 +60,5 @@ class MainActivity : AppCompatActivity() {
     {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
 }

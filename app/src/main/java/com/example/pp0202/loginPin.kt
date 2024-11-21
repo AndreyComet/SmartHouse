@@ -1,11 +1,11 @@
 package com.example.pp0202
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 
 class loginPin : AppCompatActivity() {
     private lateinit var dotContainer1: LinearLayout
@@ -26,8 +26,7 @@ class loginPin : AppCompatActivity() {
             findViewById(R.id.button66),
             findViewById(R.id.button77),
             findViewById(R.id.button88),
-            findViewById(R.id.button99),
-            findViewById(R.id.button00),
+            findViewById(R.id.button99)
         )
         digitButtons.forEach{button -> button.setOnClickListener{}
             onDigitButtonClicked(button.text.toString().toInt())}

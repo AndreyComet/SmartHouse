@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 android {
@@ -33,7 +34,12 @@ android {
 }
 
 dependencies {
-    implementation("io.supabase:supabase-kt:0.3.0")
+    implementation("io.supabase:supabase-android:2.6.1")
+    implementation("io.supabase:gotrue:1.0.0")
+    implementation("io.supabase:postgrest:1.0.0")
+    implementation(platform("io.github.jan-tennert.supabase:bom:2.6.1"))
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.ktor:ktor-client-cio:2.3.12")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")

@@ -2,9 +2,7 @@ package com.example.pp0202
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -28,8 +26,7 @@ class CreatePin : AppCompatActivity() {
             findViewById(R.id.button6),
             findViewById(R.id.button7),
             findViewById(R.id.button8),
-            findViewById(R.id.button9),
-            findViewById(R.id.button0)
+            findViewById(R.id.button9)
         )
         digitButtons.forEach{button -> button.setOnClickListener{}
         onDigitButtonClicked(button.text.toString().toInt())}

@@ -34,60 +34,69 @@
         android:gravity="center"
         android:id="@+id/dotContainer1"
         android:layout_marginBottom="20dp"/>
+
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:layout_marginLeft="80dp">
-        <Button
-            android:id="@+id/button11"
-            android:text="1"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button22"
-            android:text="2"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button33"
-            android:text="3"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button44"
-            android:text="4"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button55"
-            android:text="5"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button66"
-            android:text="6"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button77"
-            android:text="7"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button88"
-            android:text="8"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button99"
-            android:text="9"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button00"
-            android:text="0"
-            style="@style/PincodeButtonStyle"
-            android:layout_column="1"/>
-    </GridLayout>
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выйти"
-        android:backgroundTint="@color/black"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="80dp"
+        android:columnCount="3"
+        android:background="@color/semi_transparent_white">
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/PincodeButtonStyle"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button22"
+            style="@style/PincodeButtonStyle"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/button33"
+            style="@style/PincodeButtonStyle"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/button44"
+            style="@style/PincodeButtonStyle"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/button55"
+            style="@style/PincodeButtonStyle"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/button66"
+            style="@style/PincodeButtonStyle"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/button77"
+            style="@style/PincodeButtonStyle"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/button88"
+            style="@style/PincodeButtonStyle"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/button99"
+            style="@style/PincodeButtonStyle"
+            android:text="9" />
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/exit"/>
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:text="Выйти" />
 
 </LinearLayout>

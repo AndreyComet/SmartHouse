@@ -6,37 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".AddUserActivity"
     android:orientation="vertical">
-<EditText
-    android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="81dp"
+        android:background="@drawable/rectangle_10_1">
+
+        <ImageButton
+            android:id="@+id/backbtn"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/group_47"
+            android:text="Назад" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Профиль"
+            android:textColor="@color/white"
+            android:layout_marginLeft="108dp"/>
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:hint="Имя пользователя"
-    android:id="@+id/userNameEditText"/>
-    <EditText
+    android:orientation="vertical"
+    android:background="@drawable/rectangle_10_1">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="199dp"
+        android:layout_height="169dp"
+        android:layout_gravity="center"
+        android:background="@drawable/photo_1" />
+
+</LinearLayout>
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Имя пользователя"
+           android:id="@+id/userNameEditText"
+           android:layout_gravity="center"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_gravity="center"
+           android:layout_height="wrap_content"
+           android:id="@+id/email1EditText"
+           android:hint="Электронная почта"
+           android:inputType="textEmailAddress"/>
+
+       <EditText
+           android:id="@+id/passEditText"
+           android:layout_width="410dp"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:hint="Пароль"
+           android:inputType="textPassword" />
+   </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/email1EditText"
-        android:hint="Электронная почта"
-        android:inputType="textEmailAddress"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passEditText"
-        android:inputType="textPassword"
-        android:hint="Пароль"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/savebtn"
-        android:text="Сохранить"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/deleteButton"
-        android:text="Удалить"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/backbtn"
-        android:text="Назад"/>
+        android:layout_height="135dp"
+        android:layout_marginTop="180dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/blue"
+            android:text="Сохранить" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="239dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/red"
+            android:text="Удалить" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

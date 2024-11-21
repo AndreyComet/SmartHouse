@@ -1,14 +1,16 @@
 package com.example.pp0202
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.Intent
-import android.provider.ContactsContract.CommonDataKinds.Email
-import android.text.TextUtils
+import android.net.Uri
+import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 
 class AddUserActivity : AppCompatActivity() {
     private lateinit var userNameEditText: EditText
@@ -17,6 +19,13 @@ class AddUserActivity : AppCompatActivity() {
     private lateinit var savebtn: Button
     private lateinit var deleteButton: Button
     private lateinit var backbtn: Button
+    private lateinit var imageButton: ImageButton
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()){uri: Uri? ->
+        uri?.let{
+            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, it)
+            imageButton.setImageBitmap(bitmap)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_user)
@@ -26,6 +35,11 @@ class AddUserActivity : AppCompatActivity() {
         savebtn = findViewById(R.id.savebtn)
         deleteButton = findViewById(R.id.deleteButton)
         backbtn = findViewById(R.id.backbtn)
+        imageButton = findViewById(R.id.imageButton)
+
+        imageButton.setOnClickListener{
+            pickImage.launch("image/*")
+        }
 
         savebtn.setOnClickListener{
             validateInputAndSave()
@@ -36,8 +50,9 @@ class AddUserActivity : AppCompatActivity() {
         backbtn.setOnClickListener{
             goToMainScreen()
         }
+
     }
-    private fun validateInputAndSave{
+    private fun validateInputAndSave(){
         val userName = userNameEditText.text.toString().trim()
         val email = email1EditText.text.toString().trim()
         val password = passEditText.text.toString().trim()
@@ -68,5 +83,4 @@ class AddUserActivity : AppCompatActivity() {
         finish()
     }
 
-}
 }

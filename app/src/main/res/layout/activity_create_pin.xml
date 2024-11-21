@@ -34,53 +34,60 @@
         android:gravity="center"
         android:id="@+id/dotContainer"
         android:layout_marginBottom="20dp"/>
+
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:layout_marginLeft="80dp">
+        android:layout_marginLeft="80dp"
+        android:background="@color/semi_transparent_white"
+        android:columnCount="3">
+
         <Button
             android:id="@+id/button1"
-            android:text="1"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="1" />
+
         <Button
             android:id="@+id/button2"
-            android:text="2"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="2" />
+
         <Button
             android:id="@+id/button3"
-            android:text="3"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="3" />
+
         <Button
             android:id="@+id/button4"
-            android:text="4"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="4" />
+
         <Button
             android:id="@+id/button5"
-            android:text="5"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="5" />
+
         <Button
             android:id="@+id/button6"
-            android:text="6"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="6" />
+
         <Button
             android:id="@+id/button7"
-            android:text="7"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="7" />
+
         <Button
             android:id="@+id/button8"
-            android:text="8"
-            style="@style/PincodeButtonStyle"/>
+            style="@style/PincodeButtonStyle"
+            android:text="8" />
+
         <Button
             android:id="@+id/button9"
-            android:text="9"
-            style="@style/PincodeButtonStyle"/>
-        <Button
-            android:id="@+id/button0"
-            android:text="0"
             style="@style/PincodeButtonStyle"
-            android:layout_column="1"/>
+            android:text="9" />
+
 
     </GridLayout>
 
-    </LinearLayout>
+</LinearLayout>

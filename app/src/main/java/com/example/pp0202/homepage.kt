@@ -1,11 +1,11 @@
 package com.example.pp0202
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.replace
+import androidx.appcompat.app.AppCompatActivity
+import io.github.jan.supabase.SupabaseClient
+
 //import kotlinx.android.synthetic.main.homepage.*
 
 class homepage : AppCompatActivity() {
@@ -13,6 +13,7 @@ class homepage : AppCompatActivity() {
     private lateinit var devicesButton: Button
     private lateinit var usersButton: Button
     private lateinit var settingsButton: Button
+    lateinit var supabase: SupabaseClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
@@ -32,8 +33,9 @@ class homepage : AppCompatActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
-    }
 
+
+    }
 //    override fun finish() {
 //        super.finish()
 //        overrideActivityTransition(R.anim.enter_from_right, R.anim.exit_to_left)
