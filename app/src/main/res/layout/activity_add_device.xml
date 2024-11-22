@@ -6,7 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".AddDeviceActivity"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:background="@drawable/rectangle_10_1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="59dp"
+            android:layout_height="58dp"
+            android:background="@drawable/group_47"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Добавить устройство"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:layout_marginLeft="30dp"/>
+
+
+    </LinearLayout>
     <EditText
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Введите название устройства"
@@ -33,14 +60,13 @@
     </LinearLayout>
 </ScrollView>
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
-        android:text="Сохранить"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnBack"
-        android:text="Назад"/>
+        android:layout_gravity="center"
+        android:text="Сохранить"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="390dp"/>
+
 
 </LinearLayout>

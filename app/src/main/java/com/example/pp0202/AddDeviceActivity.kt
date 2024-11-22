@@ -7,10 +7,19 @@ import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import io.github.jan.supabase.createSupabaseClient
 import android.widget.*
+import io.github.jan.supabase.postgrest.from
+import kotlinx.coroutines.launch
+import io.github.jan.supabase.gotrue.providers.builtin.Email
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import io.github.jan.supabase.gotrue.Auth
+import io.github.jan.supabase.gotrue.auth
+import io.github.jan.supabase.postgrest.Postgrest
+import kotlinx.datetime.LocalDate
+import kotlinx.serialization.Serializable
 
 class AddDeviceActivity : AppCompatActivity() {
     private lateinit var deviceNameEditText: EditText
@@ -75,7 +84,7 @@ class AddDeviceActivity : AppCompatActivity() {
         }
         lifecycleScope.launch {
             try{
-                Supabase.addDevice(deviceName, deviceId, selectedRoom)
+                supabase.addDevice(deviceName, deviceId, selectedRoom)
                 Toast.makeText(this@AddDeviceActivity, "Устройство '$deviceName' успешно сохранено", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@AddDeviceActivity, homepage::class.java)
                 startActivity(intent)
