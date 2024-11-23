@@ -45,44 +45,71 @@
         <Button
             android:id="@+id/button11"
             style="@style/PincodeButtonStyle"
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:text="1" />
 
         <Button
             android:id="@+id/button22"
             style="@style/PincodeButtonStyle"
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:text="2" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button33"
             style="@style/PincodeButtonStyle"
             android:text="3" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button44"
             style="@style/PincodeButtonStyle"
             android:text="4" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button55"
             style="@style/PincodeButtonStyle"
             android:text="5" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button66"
             style="@style/PincodeButtonStyle"
             android:text="6" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button77"
             style="@style/PincodeButtonStyle"
             android:text="7" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button88"
             style="@style/PincodeButtonStyle"
             android:text="8" />
 
         <Button
+            android:layout_width="89dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rectangle_24"
             android:id="@+id/button99"
             style="@style/PincodeButtonStyle"
             android:text="9" />
