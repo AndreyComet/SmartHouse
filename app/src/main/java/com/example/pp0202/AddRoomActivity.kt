@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import io.github.jan.supabase.SupabaseClient
 
 class AddRoomActivity : AppCompatActivity() {
     private lateinit var roomNameEditText: EditText
@@ -73,7 +74,7 @@ class AddRoomActivity : AppCompatActivity() {
         }
     private fun saveRoom(roomName: String){
         val newRoom = mapOf("name" to roomName)
-        val response = supabaseClient.from("rooms").insert(newRoom).execute()
+        val response = SupabaseClient.from("rooms").insert(newRoom).execute()
         if(response.isSuccess){
             existingRooms.add(roomName)
         }

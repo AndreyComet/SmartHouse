@@ -1,12 +1,12 @@
 package com.example.pp0202
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import java.lang.Exception
+import androidx.appcompat.app.AppCompatActivity
+import io.github.jan.supabase.SupabaseClient
 
 class Address : AppCompatActivity() {
  private lateinit var editText : EditText
@@ -17,6 +17,8 @@ class Address : AppCompatActivity() {
         val btnSave = findViewById<Button>(R.id.button)
         btnSave.setOnClickListener{
             val address = editText.text.toString()
+            val data = mapOf("Address" to address)
+            SupabaseClient.from("Address").insert(data).execute()
             if(isAddressValid(address)){
                 val intent = Intent(this, homepage::class.java)
                 startActivity(intent)

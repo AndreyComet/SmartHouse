@@ -1,14 +1,13 @@
 package com.example.pp0202
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
 
 class profile : AppCompatActivity() {
     private lateinit var nameUser: EditText
@@ -35,6 +34,10 @@ class profile : AppCompatActivity() {
             }
         }
         logout.setOnClickListener{
+            val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }

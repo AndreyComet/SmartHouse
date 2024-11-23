@@ -30,6 +30,10 @@ class CreatePin : AppCompatActivity() {
         )
         digitButtons.forEach{button -> button.setOnClickListener{}
         onDigitButtonClicked(button.text.toString().toInt())}
+        val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("pin_code", pinDigits.toString())
+        editor.apply()
 
         }
     private fun onDigitButtonClicked(digit:Int){

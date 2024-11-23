@@ -11,6 +11,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import io.github.jan.supabase.SupabaseClient
+import io.ktor.utils.io.concurrent.shared
 
 class AddUserActivity : AppCompatActivity() {
     private lateinit var userNameEditText: EditText
@@ -36,11 +38,25 @@ class AddUserActivity : AppCompatActivity() {
         deleteButton = findViewById(R.id.deleteButton)
         backbtn = findViewById(R.id.backbtn)
         imageButton = findViewById(R.id.imageButton)
-
         imageButton.setOnClickListener{
-            pickImage.launch("image/*")
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            intent.type = "image/*"
+            startActivityForResult(intent, PICK_IMAGE_REQUEST)
         }
-
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null){
+                val selectedImageUri: Uri = data.data!!
+                val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("user_icon", selectedImageUri.toString())
+                editor.apply()
+            }
+        }
+        Glide.with(this)
+            .load("")
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(imageButton)
         savebtn.setOnClickListener{
             validateInputAndSave()
         }
@@ -50,12 +66,14 @@ class AddUserActivity : AppCompatActivity() {
         backbtn.setOnClickListener{
             goToMainScreen()
         }
-
     }
     private fun validateInputAndSave(){
         val userName = userNameEditText.text.toString().trim()
         val email = email1EditText.text.toString().trim()
         val password = passEditText.text.toString().trim()
+        val userListQuery = SupabaseClient.from("users").select(*).execute()
+        val data = mapOf("name" to userName)
+        SupabaseClient.from("users").insert(data).execute()
         if(userName.isEmpty()){
             Toast.makeText(this, "Пожалуйста, введите имя пользователя", Toast.LENGTH_SHORT).show()
             return
@@ -82,5 +100,4 @@ class AddUserActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 }

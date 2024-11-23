@@ -13,6 +13,7 @@ import io.github.jan.supabase.postgrest.from
 import kotlinx.coroutines.launch
 import io.github.jan.supabase.gotrue.providers.builtin.Email
 import androidx.lifecycle.lifecycleScope
+import io.github.jan.supabase.SupabaseClient
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import io.github.jan.supabase.gotrue.Auth
@@ -84,7 +85,7 @@ class AddDeviceActivity : AppCompatActivity() {
         }
         lifecycleScope.launch {
             try{
-                supabase.addDevice(deviceName, deviceId, selectedRoom)
+                SupabaseClient.addDevice(deviceName, deviceId, selectedRoom)
                 Toast.makeText(this@AddDeviceActivity, "Устройство '$deviceName' успешно сохранено", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@AddDeviceActivity, homepage::class.java)
                 startActivity(intent)

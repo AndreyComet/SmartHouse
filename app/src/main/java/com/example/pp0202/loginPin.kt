@@ -34,7 +34,16 @@ class loginPin : AppCompatActivity() {
         exitButton = findViewById(R.id.exit)
         exitButton.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
+        val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
         }
+
+        val sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE)
+        val savedPinCode = sharedPreferences.getString("pin_code", null)
+
+
     }
     private fun onDigitButtonClicked(digit:Int){
         if(pinDigits.size<4){
